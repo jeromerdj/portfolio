@@ -1,0 +1,259 @@
+@media (min-aspect-ratio: 16/9) {
+    .tableau {
+        height: 10vh;
+        position: absolute;
+        width: 7.5vw;
+        top: 33vh;
+        left: 34vw;
+        z-index: 1000000;
+    }
+
+    .musique {
+        height: 11vh;
+        position: absolute;
+        width: 4vw;
+        top: 32vh;
+        right: 33vw;
+        z-index: 1000000;
+    }
+
+    .cafe{
+        height: 8vh;
+        position: absolute;
+        width: 3vw;
+        top: 48vh;
+        right: 36vw;
+        z-index: 1000000;
+    }
+
+    .game{
+        height: 8vh;
+        position: absolute;
+        width: 3vw;
+        top: 35vh;
+        right: 37.5vw;
+        z-index: 1000000;
+    }
+}
+
+svg {
+    max-width: 100%!important;
+    max-height:100%!important;
+    width: 100%!important;
+    height: 100%!important;
+}
+
+.home {
+    position: relative;
+    .total-home {
+        height: 100vh;
+    }
+    .presentation {
+        h1 {
+        margin-bottom:3%;
+        color: $primary-color;
+        font-size: 43px;
+        font-weight: 400;
+        }
+        h2 {
+        margin-bottom:10%;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-size: 16px;
+        font-weight: 300;
+        }
+        #bodymovin{
+            width: 113%;
+            margin-left: -12px;
+            svg {
+                width: 100%!important;
+                height: 100%!important;
+            }
+        }
+        .description{
+        font-size: 14px;
+        margin-top: 6%;
+        padding:0 11%;
+        line-height: 180%;
+            .helloworld {
+                letter-spacing: 3px;
+            }
+            strong {
+                font-weight: 400;
+            }
+        }
+    }
+    .infos-gauche {
+        top: 0px;
+        left: 40px;
+        width: 100vh;
+        transform-origin: top left;
+        transform: rotate(-90deg) translate3d(-100%,0,0);
+        position: absolute;
+        font-family: 'Playfair Display', serif;
+    }
+
+    .line-scroll:before {
+        content: "Projets";
+        position: absolute;
+        right: -31px;
+        top: -27px;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+}
+
+.projets-home {
+    h3 {
+        font-size: 5vw;
+        font-weight: bold;
+        color: #efefef;
+        margin-bottom: 4%;
+    }
+
+    .miniature-projet{
+    }
+    h4 {
+        margin-bottom:4%;
+    }
+    p {
+        margin-top: 4%;
+        padding:0 6%;
+        color:$secondary-color;
+    }
+    .semi-bold{
+        font-weight: 600;
+    }
+}
+
+.presentation-home{
+    h3 {
+        font-size: 5vw;
+        font-weight: bold;
+        color: #efefef;
+        margin-bottom: 6%;
+    }
+    .img-txt {
+        img {
+        max-width: 70%;
+        -webkit-filter: grayscale(100%); /* Pour les navigateurs Chrome, Safari, Opera */
+        filter: grayscale(100%); /* Firefox */
+        -webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        -moz-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        -ms-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        -o-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            &:hover {
+                -webkit-filter: grayscale(0%); /* Pour les navigateurs Chrome, Safari, Opera */
+                filter: grayscale(0%); /* Firefox */
+            };
+        }
+        hr {
+            margin-top:0;
+            border-top: 2px solid $primary-color;
+        }
+        p {
+            line-height: 180%;
+            margin-bottom: 10%;
+        }
+        strong {
+            font-weight: 400;
+        }
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    .home {
+
+        .total-home {
+            position: relative;
+            margin-top: 80px;
+            height: auto;
+            .line-scroll {
+                bottom:20px;
+                height: 20px;
+            }
+
+        }
+        .presentation {
+            h1 {
+                font-size: 38px;
+                strong {
+                }
+            }
+            h2 {
+                letter-spacing: 2px;
+                margin-bottom:13%;
+            }
+            #bodymovin{
+                max-width: 100%;
+                margin-left: 0;
+            }
+            .description{
+                margin-top: 9%;
+                .helloworld {
+                    letter-spacing: 2px;
+                }
+            }
+        }
+        .infos-gauche {
+            display: none!important;
+        }
+    }
+
+
+    .projets-home {
+        .projet-solo:nth-of-type(2) {
+            margin-top: 15%;
+        }
+        h3 {
+            font-size: 15vw;
+            margin-bottom: 45px;
+        }
+
+        .miniature-projet{
+        }
+        h4 {
+        }
+        p {
+        }
+        .semi-bold{
+        }
+        .bounce {
+            margin: 4% auto 14%;
+        }
+    }
+
+
+    .presentation-home{
+        text-align: center;
+        h3 {
+            font-size: 15vw;
+            margin-bottom: 45px;
+        }
+        .img-txt {
+            img {
+            }
+            hr {
+            }
+            p {
+                text-align: center;
+                margin-top: 20px;
+            }
+            strong {
+
+            }
+        }
+        .description {
+            text-align: center!important;
+        }
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .description {
+        padding-right: 8.33%;
+    }
+}

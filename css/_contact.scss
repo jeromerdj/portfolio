@@ -1,0 +1,76 @@
+#contact {
+    height: 100vh;
+    margin-left: -2px;
+    h1 {
+        font-size: 5vw;
+        font-weight: bold;
+        color: #efefef;
+        margin-bottom: 4%;
+    }
+    .message-gentil {
+        margin: 7% 0;
+        strong {
+            font-weight: 400;
+        }
+    }
+    input,
+    label,
+    span,
+    textarea {
+        width: 100.6%;
+    }
+
+    textarea{
+        height: 120px;
+    }
+    .wpcf7-submit {
+        display:inline-block!important;
+        padding:10px 20px!important;
+        background:white!important;
+        border: 1px solid $primary-color!important;
+        color: $primary-color!important;
+        font-weight: 400!important;
+        width: inherit;
+        float: right;
+        margin-right: -6px;
+        margin-top:10px;
+    }
+
+    div.wpcf7-response-output {
+    border: 2px solid #428ce1;
+    }
+}
+
+@media screen and (max-width: 992px) {
+
+    #contact {
+        margin-top: 80px;
+        height: auto;
+        margin-left: 0px;
+        h1 {
+            font-size: 15vw;
+            margin-bottom: 45px;
+        }
+        input,
+        label,
+        span,
+        textarea {
+            width: 100.6%;
+        }
+        .wpcf7-submit {
+            display:inline-block!important;
+            padding:10px 20px!important;
+            background:white!important;
+            border: 1px solid $primary-color!important;
+            color: $primary-color!important;
+            font-weight: 400!important;
+            width: inherit;
+            float: right;
+            margin-right: -6px;
+        }
+
+        div.wpcf7-response-output {
+        border: 2px solid #428ce1;
+        }
+    }
+}

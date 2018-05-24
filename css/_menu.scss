@@ -1,0 +1,290 @@
+.jr {
+    font-family: 'Playfair Display', serif;
+    color:$primary-color;
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    font-size: 22px;
+    border: 1px solid $primary-color;
+    padding:3px 3px 0px 3px;
+    width: 45px;
+    height:45px;
+    border-radius:100px;
+    z-index: 50000;
+    text-align: center;
+    transition: 0.2s ease;
+    &:hover {
+        width: 52px;
+        height:52px;
+        padding:7px 2px 0px 3px;
+        top: 36px;
+        left: 36px;
+    }
+}
+
+
+
+
+
+.button-menu {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    line-height: 135%;
+    position: fixed;
+    top: 40px;
+    right: 56px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.haut, .bas {
+    display: inline-block;
+    margin: 0;
+    position: relative;
+    -webkit-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    -moz-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    -ms-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    -o-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 1px;
+}
+
+.haut {
+    left: -9px;
+    position: absolute;
+}
+
+.bas {
+    right:-9px;
+    padding-top:-10px;
+    position: absolute;
+}
+
+.haut:before {
+    content: "-";
+    position: absolute;
+    left:-9px;
+    -webkit-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    -moz-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    -ms-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    -o-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bas:after {
+    content: "-";
+    position: absolute;
+    top:0px;
+    right:-9px;
+    -webkit-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    -moz-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    -ms-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    -o-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-menu:hover .haut:before {
+    left:31px;
+}
+
+ .button-menu:hover .bas:after {
+    right:31px;
+}
+
+.link-menu {
+    position: fixed;
+    font-size: 18px;
+    transition: 0.3s ease;
+    &:hover {
+        color: inherit;
+    }
+    &.active {
+        opacity: 0;
+    }
+}
+
+ .button-menu:hover .haut {
+    left: -13px;
+}
+
+.button-menu:hover .bas {
+    right:-14px;
+}
+
+/* ----------------- OPEN MENU ---------------- */
+
+.menu {
+    background: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    text-align: center;
+    color: $primary-color;
+    list-style: none;
+    z-index: 0;
+    opacity: 0;
+    transition: 0.5s ease;
+    height:100%;
+    width: 100vw;
+    display: none;
+}
+
+.signature {
+    position: absolute;
+    bottom: 20px;
+    display: block;
+    width: 100%;
+    font-size: 12px;
+    color: $secondary-color;
+    .logo-rs {
+        width: 20px;
+    }
+}
+
+.fermeture-menu {
+    animation-duration: 0.5s;
+    animation-name: fermeturemenu;
+    animation-fill-mode: forwards;
+}
+
+.open-menu {
+    z-index: 5000;
+    animation-duration: 0.5s;
+    animation-name: ouverturemenu;
+    animation-fill-mode: forwards;
+    display: block;
+}
+
+@keyframes ouverturemenu {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity:1;
+  }
+}
+
+@keyframes fermeturemenu {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity:0;
+  }
+}
+
+
+.menu ul{
+    list-style: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 50px;
+    line-height: 230%;
+    padding: 0;
+    li {
+        transition: 0.2s ease;
+        &:hover {
+            font-size:58px;
+        }
+    }
+}
+
+.close-menu {
+    transform: rotate(45deg);
+    position: absolute;
+    width: 30px;
+    height:30px;
+    z-index: 10000;
+    right: 43px;
+    top: 46px;
+    cursor: pointer;
+    display: none;
+}
+
+.close-menu div:nth-of-type(1) {
+    height:30px;
+    width: 4px;
+    background: $primary-color;
+    position: absolute;
+    left: 13px;
+    animation: rotate 0.5s;
+}
+
+@keyframes rotate {
+    from {
+    transform: rotate(90deg);
+    }
+
+    to {
+    transform: rotate(0deg);
+    }
+}
+.close-menu div:nth-of-type(2) {
+    height:4px;
+    width: 30px;
+    background: $primary-color;
+    position: absolute;
+    top: 13px;
+    animation: rotate2 0.5s;
+}
+
+@keyframes rotate2 {
+    from {
+    transform: rotate(180deg);
+    }
+
+    to {
+    transform: rotate(0deg);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .button-menu {
+        top: 20px;
+        right: 40px;
+    }
+    .close-menu {
+        right: 25px;
+        top:28px;
+    }
+    .jr {
+        top: 20px;
+        left: 20px;
+        &:hover {
+            top: 20px;
+            left: 20px;
+            padding:3px 3px 0px 3px;
+            width: 45px;
+            height:45px;
+        }
+    }
+
+    header {
+        background: white;
+        display: block;
+        height: 85px;
+        position: fixed;
+        z-index: 50000;
+        width: 100%;
+        top: 0;
+        &:before {
+            box-shadow:50vw  0vw #efefef!important;
+            width: 1px;
+            background:none;
+            position: fixed;
+            left:auto;
+            top: 0;
+            height: 85px
+        }
+    }
+
+    .menu ul{
+        font-size: 40px;
+        li {
+            &:hover {
+                font-size:45px;
+            }
+        }
+    }
+}

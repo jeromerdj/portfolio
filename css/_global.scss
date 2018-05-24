@@ -1,0 +1,224 @@
+/*-----------------  COULEURS ----------------- */
+$primary-color:#5e6b7a;
+$secondary-color: #748497;
+
+/*-----------------  FONTS ----------------- */
+h1 {font-size:34px; font-family: 'Playfair Display', serif; color:$primary-color; font-weight: bold;}
+h2 {font-size:18px; font-family: 'Open Sans', sans-serif; font-weight: 300;}
+h3 {font-size:30px; font-family: 'Playfair Display', serif;}
+h4 {font-size:26px; font-family: 'Playfair Display', serif; font-weight: bold;}
+body { font-family: 'Open Sans', sans-serif; color:$primary-color; font-size:16px; font-weight: 300; }
+a {color:inherit; &:hover {text-decoration: none; color: inherit;}}
+strong {font-weight: 600;}
+
+/*-----------------  SCROLL BAS PROJET----------------- */
+
+.scroll-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 22px;
+  font-size: 22px;
+  color: $secondary-color;
+  border-radius: 2em;
+  border: solid 1px;
+  transition: .4s;
+  position: absolute;
+  z-index: 0;
+  left:49.35%;
+  bottom:20px;
+  cursor: none;
+}
+
+.scroll-icon::after {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background-color: $secondary-color;
+  border-radius: 50%;
+  animation: scroll-icon 1.2s infinite cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+@keyframes scroll-icon {
+    0% { transform: translateY(-12px); opacity: 0; }
+   30%, 70% { opacity: 1; }
+  100% { transform: translateY(12px); opacity: 0; }
+}
+
+
+
+
+
+/*-----------------  BTN ----------------- */
+
+.pre-btn-perso{
+    margin-top:3%;
+}
+
+@-webkit-keyframes bouncebtn {
+        0% {
+    transform: scale(1,1) translate(0px, 0px);
+  }
+
+  50%{
+    transform: scale(1,1) translate(0px, 5px);
+  }
+
+ 100% {
+    transform: scale(1,1) translate(0px, 0px);
+  }
+}
+
+.bounce {
+      display:inline-block;
+      padding:10px 20px;
+      background:white;
+      border: 1px solid $primary-color;
+     -webkit-animation: bouncebtn 1s infinite;
+     color: $primary-color;
+}
+
+.bounce:hover {
+      animation-play-state: paused;
+}
+
+
+/*-----------------  CONTACT ----------------- */
+.info-contact {
+    bottom: -38px;
+    right: 40px;
+    transform-origin: top right;
+    transform: rotate(90deg) translate3d(-100%,0,0);
+    position: fixed;
+    text-transform: uppercase;
+    font-weight: bold;
+    z-index: 100;
+}
+
+.items a{
+  display:inline-block;
+  text-decoration:none;
+  color:$primary-color;
+  text-transform: uppercase;
+  font-size: 16px;
+  height: 20px;
+  overflow: hidden;
+
+}
+.items a span{
+  display: inline-block;
+  position:relative;
+  transition: transform 500ms;
+  -webkit-transition: -webkit-transform 500ms;
+  -moz-transition: transform 500ms;
+
+}
+.items a span:after{
+  content: attr(data-hover);
+  position: absolute;
+  top: -30px;
+  left:0;
+  transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+	-webkit-transform: translate3d(0,0,0);
+}
+.items a:hover span,
+.items a:focus span {
+	transform: translateY(30px);
+  -webkit-transform: translateY(30px);
+  -moz-transform: translateY(30px);
+}
+
+
+/*-----------------  PADDING ----------------- */
+.padding-perso{padding:0 4%;}
+
+/*-----------------  TRAITS ----------------- */
+hr {
+    width: 11%;
+    border-top: 1px solid $primary-color;
+    margin: 20px 0px;
+}
+
+.line-scroll {
+    width: 1px;
+    height: 4%;
+    position: absolute;
+    bottom: 0;
+    background: $primary-color;
+    left: 50%;
+}
+
+.afterline {
+    &:before {
+        left:-8px;
+    }
+}
+
+/*-----------------  LINES BACKGROUND ----------------- */
+
+
+    body:before {
+        content: "";
+        width: 1px;
+        height: 100vh;
+        background:none;
+        position: fixed;
+        left:auto;
+        top: 0;
+        box-shadow:
+        83.33333vw  0vw #efefef,
+        calc(66.666678vw + 0px) calc(0vw + 0px) #efefef,
+        calc(50vw + 0px) calc(0vw + 0px) #efefef,
+        calc(33.33333vw + 0px) calc(0vw + 0px) #efefef,
+        calc(16.66667vw + 0px) calc(0vw + 0px) #efefef;
+        z-index: -1000;
+    }
+
+
+
+@media screen and (max-width: 992px) {
+/*body:before {
+    box-shadow:
+    99.99vw  0vw #efefef,
+    calc(66.66vw + 0px) calc(0vw + 0px) #efefef,
+    calc(33.33vw + 0px) calc(0vw + 0px) #efefef;
+}*/
+    body {
+        padding-bottom: 70px;
+    }
+
+    body:before {
+        box-shadow:50vw  0vw #efefef!important;
+        left: 0px;
+    }
+
+    .container-fluid {
+        padding:20px 20px 40px 20px;
+    }
+
+    .info-contact {
+        display: none;
+    }
+
+    #fp-nav.right {
+        display: none;
+    }
+
+    .afterline {
+        &:before {
+            left:0px!important;
+        }
+    }
+
+    .scroll-icon {
+      display: none;
+    }
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+    .container-fluid {
+        padding: 0px 50px 50px 50px;
+    }
+}

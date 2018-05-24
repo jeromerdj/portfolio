@@ -1,0 +1,90 @@
+.all-projets {
+    height: 100vh;
+    h2 {
+        font-size: 34px;
+        font-weight: bold;
+        font-family: 'Playfair Display', serif;
+    }
+    .ensemble-infos-projet {
+        padding-left: 3px;
+        .bounce {
+            margin-top: 7%;
+        }
+    }
+    .visuel {
+        max-height: 540px;
+        overflow: hidden;
+        a {
+            margin: 0 12.33%;
+            display: inline-block;
+        }
+    }
+    .description {
+        color:$secondary-color;
+        padding-right: 26%;
+        margin-bottom: 5%;
+    }
+    .type, .date {
+        text-transform: uppercase;
+    }
+
+}
+
+
+@media screen and (max-width: 992px) {
+    .line-scroll {
+        display: none;
+    }
+    .projets {
+        .all-projets {
+            text-align: center;
+            height: auto;
+            margin-top: 80px;
+            h2 {
+                font-size: 30px;
+                margin-top: 15px;
+            }
+            .ensemble-infos-projet {
+                padding-left: 0px;
+                .bounce {
+                    margin-top: 3%;
+                    margin-bottom:5%;
+                }
+            }
+            hr {
+                margin:15px auto;
+            }
+            .visuel {
+                a {
+                    margin: 0;
+                }
+            }
+            .description {
+                padding-right: 0%;
+            }
+            .type, .date {
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1540px) {
+    .all-projets {
+        .visuel {
+            max-height: inherit;
+        }
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .visuel {
+        text-align: right;
+        & a{
+            display:inline-block;
+            max-width: 1229px;
+            max-height: 816px;
+            overflow: hidden;
+        }
+    }
+
+}
